@@ -15,3 +15,23 @@ message PingRequest {
 message PingResponse {
   string message = 1;
 }
+
+message InnerObject2 {
+  string var1 = 1;
+  bool isVar = 2;
+}
+
+message InnerObject {
+  string var1 = 1;
+  string var2 = 2;
+  int32 var3 = 3;
+  repeated string stringVars = 4;
+  map<string, InnerObject2> inners = 6;
+}
+
+message OuterObject {
+  string var1 = 1;
+  string var2 = 2;
+  repeated InnerObject innerObjectVars = 5;
+  map<string, InnerObject> inners = 3;
+}
